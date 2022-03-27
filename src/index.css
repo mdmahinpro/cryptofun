@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap");
+
+:root {
+  --primary-blue: #00d8ff;
+  --primary-purple: #6a00ff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.blue {
+  color: var(--primary-blue);
+}
+
+@layer base {
+  * {
+    @apply font-[IBM];
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  li {
+    @apply p-4;
+  }
+  button {
+    @apply bg-gradient-to-r from-[var(--primary-purple)] to-[var(--primary-blue)] rounded-3xl py-2 px-4;
+  }
 }
